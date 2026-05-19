@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Feedback Sentiment Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Movie Feedback Sentiment Analyzer</h1>
+      <p class="subtitle">Share your movie feedback and get instant sentiment prediction.</p>
+
+      <form method="POST" class="feedback-form">
+        <label for="feedback">Movie Feedback</label>
+        <textarea
+          id="feedback"
+          name="feedback"
+          rows="6"
+          placeholder="Example: The movie was visually stunning but the story felt weak."
+          required
+        ></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+
+      {% if prediction %}
+      <div class="result {% if prediction == 'Negative Sentiment' %}error{% else %}success{% endif %}">
+        <h2>Prediction: {{ prediction }}</h2>
+        <p><strong>Your input:</strong> {{ user_input }}</p>
+        <p><strong>Prediction input used:</strong> {{ prediction_input }}</p>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>
