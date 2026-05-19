@@ -4,7 +4,7 @@ A Flask web app to predict sentiment (Positive/Negative) from movie feedback tex
 
 ## Deployed Link
 
-- Live App: _Add your deployed URL here_
+https://sentiment-analysis-13k3.onrender.com
 
 ## Model Details
 
